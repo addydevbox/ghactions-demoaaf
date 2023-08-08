@@ -79,6 +79,19 @@ jobs:
         with:
           name: .net-app
 
+      - name: Az CLI login
+        uses: azure/login@v1
+        with:
+          subscription-id: ${{ secrets.AZURE_CREDENTIALS }}
+  
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
+            az group list
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
