@@ -80,9 +80,9 @@ jobs:
           name: .net-app
 
       - name: Az CLI login
-        uses: azure/login@v1
+        uses: azure/login@v1.4.3
         with:
-          subscription-id: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
   
       - name: Azure CLI script
         uses: azure/CLI@v1
