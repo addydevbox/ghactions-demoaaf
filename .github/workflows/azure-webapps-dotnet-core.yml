@@ -73,9 +73,6 @@ jobs:
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
       
-    container:
-      image: bitnami/azure-cli:2.31.0
-      
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
