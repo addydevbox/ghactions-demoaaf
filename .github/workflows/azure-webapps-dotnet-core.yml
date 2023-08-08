@@ -72,7 +72,10 @@ jobs:
     environment:
       name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
+      
+    container:
+      image: bitnami/azure-cli:2.31.0
+      
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
@@ -80,7 +83,7 @@ jobs:
           name: .net-app
 
       - name: Az CLI login
-        uses: azure/login@v1.4.3
+        uses: azure/actions/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
   
