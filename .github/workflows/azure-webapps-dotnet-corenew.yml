@@ -1,4 +1,4 @@
-name: Build and deploy GitHub App
+name: Build and deploy GitHub App   # Successful deployment 8/9/2023
 
 env:
   AZURE_WEBAPP_NAME: ghactionsao    # set this to the name of your Azure Web App
