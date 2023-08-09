@@ -62,7 +62,7 @@ jobs:
       id: deploywebapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.app-name }}
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: production
         package: .net-app
 
