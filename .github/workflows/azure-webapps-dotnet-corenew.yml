@@ -51,7 +51,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: .net-app
-        path: website
 
     - name: Login via Azure CLI
       uses: azure/login@v1
